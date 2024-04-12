@@ -17,6 +17,18 @@
 ## Amend DESCRIPTION with dependencies read from package code parsing
 ## install.packages('attachment') # if needed.
 attachment::att_amend_desc()
+usethis::use_dev_package(
+  package = "gargoyle",
+  remote = "github::ColinFay/gargoyle"
+)
+usethis::use_dev_package(
+  package = "susoapi",
+  remote = "github::arthur-shaw/susoapi"
+)
+usethis::use_dev_package(
+  package = "susoreview",
+  remote = "github::arthur-shaw/susoreview"
+)
 
 ## Add modules ----
 ## Create a module infrastructure in R/
