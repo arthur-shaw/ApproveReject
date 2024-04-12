@@ -52,8 +52,9 @@ synching and receiving a rejected interview.
 
 To run the app, open RStudio and execute the the following lines of code:
 
-```{r example}
+```{r use}
 library(ApproveReject)
+setwd(system.file(package = "ApproveReject"))
 run_app()
 ```
 
