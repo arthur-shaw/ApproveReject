@@ -8,24 +8,35 @@
 #' - App version
 #'
 #' @importFrom rappdirs user_data_dir
-#' @importFrom golem get_golem_name get_golem_version
+#' @importFrom desc desc_get
 #'
 #' @return Character. Path to user's app data directory
 construct_user_data_path <- function() {
 
+  # given that app_sys() will behave differently based on
+  # wether or not we are in dev mode, we can use `{desc}`
+  # and find the correct DESCRIPTION here, using the
+  # internal app_sys()
+  app_description_path <- app_sys("DESCRIPTION")
+
   dir <- rappdirs::user_data_dir(
-      appname = golem::get_golem_name(),
-      version = golem::get_golem_version()
+    appname = desc_get(
+      "Package",
+      file = app_description_path
+    ),
+    version = desc_get(
+      "Version",
+      file = app_description_path
+    )
   )
 
   return(dir)
-
 }
 
 #' Create user application directory for persistent storage
-#' 
+#'
 #' @return Character. Path where app directory was created/exists
-#' 
+#'
 #' @importFrom fs dir_exists dir_create
 #' @importFrom glue glue
 create_user_app_dir <- function() {
@@ -47,5 +58,4 @@ create_user_app_dir <- function() {
   } else {
     stop("App data directory could not be created")
   }
-
 }
