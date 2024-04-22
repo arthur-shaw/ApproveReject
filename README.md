@@ -47,7 +47,6 @@ code:
 
 ``` r
 library(ApproveReject)
-setwd(system.file(package = "ApproveReject"))
 run_app()
 ```
 

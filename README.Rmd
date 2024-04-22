@@ -54,7 +54,6 @@ To run the app, open RStudio and execute the the following lines of code:
 
 ```{r use}
 library(ApproveReject)
-setwd(system.file(package = "ApproveReject"))
 run_app()
 ```
 
