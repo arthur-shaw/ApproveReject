@@ -17,7 +17,9 @@ approving and rejecting interviews.
 You can install the development version of ApproveReject like so:
 
 ``` r
-pak::pak("arthur-shaw/ApproveReject")
+# if needed, install `devtools` by uncommenting the immediately below
+# install.packages("devtools")
+devtools::install_github("arthur-shaw/ApproveReject")
 ```
 
 ## Usage
